@@ -1,6 +1,6 @@
-include < stdio.h >
-/*
- * Print out the message -Programming is like building a multilingual puzzle
+#include<stdio.h>
+/**
+ * 
  */
 int main(void)
 {
