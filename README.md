@@ -4,7 +4,7 @@
 
 ## concepts that we will see
 
-*Why C Programming Is Awesome
-*Learning to program in C 
-*Understanding C program Compilation Process
+* Why C Programming Is Awesome
+* Learning to program in C 
+* Understanding C program Compilation Process
 
