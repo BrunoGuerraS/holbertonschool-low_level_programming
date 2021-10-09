@@ -1,4 +1,4 @@
-#include "main.h"
+#include "holberton.h"
 /**
  * _isupper - return if c is a letter in uppercase
  * @c: int
