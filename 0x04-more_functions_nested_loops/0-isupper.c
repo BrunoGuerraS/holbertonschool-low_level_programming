@@ -1,20 +1,22 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * int _isupper - return if c is a letter in uppercase
+ * _isupper - return if c is a letter in uppercase
  * @c: int
  * Return: c
  */
 int _isupper(int c)
 {
-	if (c > 64 && c < 91)
+	int n;
+
+	if (c >= 65 && c <= 90)
 	{
-		c = 1;
+		n = 1;
 	}
 	else
 	{
-		c = 0;
+		n = 0;
 	}
 
-	return (c);
+	return (n);
 }
