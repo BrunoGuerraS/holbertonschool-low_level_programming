@@ -8,16 +8,23 @@ void puts_half(char *str)
 	int count = 0;
 	int *ptr1 = str;
 	int i = 0;
+	int n;
 
 	while (*str != '\0')
 	{
 		count++;
 		str++;
 	}
+	
+	if (count % 2 !== 0)
+	{
+		n = (count - 1) / 2;
+	}
+
 
 	while (*ptr1 != '\0')
 	{
-		if (i >= count / 2)
+		if (i >= n)
 		{
 			_putchar(*ptr1);
 		}
