@@ -4,18 +4,18 @@
  * @s: pointer
  */
 void rev_string(char *s)
-{	
+{
 	int count = 0;
 	int i;
 
-	while(*s != '\0')
+	while (*s != '\0')
 	{
 		count++;
 		s++;
 	}
 
 	s--;
-	
+
 	for (i = 0; i < count; i++)
 	{
 		_putchar(*s);
