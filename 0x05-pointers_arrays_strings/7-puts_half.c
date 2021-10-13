@@ -6,7 +6,7 @@
 void puts_half(char *str)
 {
 	int count = 0;
-	int *ptr1 = str;
+	char *ptr1 = str;
 	int i = 0;
 	int n;
 
@@ -15,12 +15,15 @@ void puts_half(char *str)
 		count++;
 		str++;
 	}
-	
-	if (count % 2 !== 0)
+
+	if (count % 2 != 0)
 	{
 		n = (count - 1) / 2;
 	}
-
+	else
+	{
+		n = count / 2;
+	}
 
 	while (*ptr1 != '\0')
 	{
