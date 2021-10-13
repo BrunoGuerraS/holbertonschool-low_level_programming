@@ -5,21 +5,29 @@
  */
 void rev_string(char *s)
 {
+	
 	int count = 0;
-	int i;
+	int i = 0;
+	char *ptr1 = s;
+	char *ptr2 = s;
+	char tmp;
+	
 
-	while (*s != '\0')
+	while (*ptr1 != '\0')
 	{
 		count++;
-		s++;
+		ptr1++;
 	}
 
-	s--;
-
-	for (i = 0; i < count; i++)
+	ptr1--;
+	
+	while (i < count/2)
 	{
-		_putchar(*s);
-		s--;
+		tmp = *ptr2;
+		*ptr2 = *ptr1;
+		*ptr1 = tmp;
+		ptr2++;
+		ptr1--;
 	}
 	_putchar(10);
 }
