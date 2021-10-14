@@ -8,14 +8,14 @@ void print_array(int *a, int n)
 {
 	int i;
 
-	for (i=0; i<n; i++)
+	for (i = 0; i < n; i++)
 	{
 		printf("%d", a[i]);
-		if (i< (n-1))
+		if (i < n - 1)
 		{
-			putchar(44);
-			putchar(' ');
+			_putchar(44);
+			_putchar(' ');
 		}
 	}
-	putchar(10);
+	_putchar(10);
 }
