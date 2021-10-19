@@ -9,7 +9,7 @@ char *_strstr(char *haystack, char *needle)
 {
 	unsigned int x, xx, y, bit;
 
-	if (needle == '\0')
+	if (*needle == '\0')
 		return (haystack);
 	for (x = 0; *(haystack + x); x++)
 	{
@@ -17,7 +17,7 @@ char *_strstr(char *haystack, char *needle)
 		xx = x;
 		for (y = 0; *(needle + y) && (haystack + xx); y++)
 		{
-			if ((haystack + xx) == *(needle + y))
+			if (*(haystack + xx) == *(needle + y))
 				bit = 1;
 			else
 				break;
@@ -27,5 +27,5 @@ char *_strstr(char *haystack, char *needle)
 			return (haystack + x);
 	}
 
-	return ('\0');
+	return (0);
 }
