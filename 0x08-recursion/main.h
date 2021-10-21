@@ -18,6 +18,6 @@ int is_palindrome(char *s);
 int _strlen_recursion(char *s);
 int _palindrome(char *s, int x, int y);
 
-
+int wildcmp(char *s1, char *s2);
 
 #endif
