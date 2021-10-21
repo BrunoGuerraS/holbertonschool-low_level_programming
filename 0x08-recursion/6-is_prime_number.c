@@ -7,7 +7,7 @@
  */
 int prime(int n, int i)
 {
-	if (n != i && n % i)
+	if (n != i && n % i == 0)
 	{
 		return (0);
 	}
@@ -34,4 +34,5 @@ int is_prime_number(int n)
 	else
 	{
 		return (prime(n, 2));
+	}
 }
