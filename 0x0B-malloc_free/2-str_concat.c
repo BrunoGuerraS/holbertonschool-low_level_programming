@@ -12,13 +12,13 @@ char *str_concat(char *s1, char *s2)
 	int acum = 0;
 	char *ma;
 
-	while (s1[x] != '\0')
+	while (s1 && s1[x] != '\0')
 	{
 		acum += 1;
 		x++;
 	}
 	x = 0;
-	while (s2[x] != '\0')
+	while (s2 && s2[x] != '\0')
 	{
 		acum += 1;
 		x++;
@@ -29,12 +29,12 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	}
 	x = 0;
-	while (s1[x] != '\0')
+	while (s1 && s1[x] != '\0')
 	{
 		ma[x] = s1[x];
 		x++;
 	}
-	while (s2[i] != '\0')
+	while (s2 && s2[i] != '\0')
 	{
 		ma[x] = s2[i];
 		x++;
