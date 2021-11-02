@@ -5,14 +5,19 @@
  */
 void jack_bauer(void)
 {
-	char h1;
-	char h2;
-	char m1;
-	char m2;
+	char h1 = 48;
+	char h2 = 48;
+	char m1 = 48;
+	char m2 = 48;
+	int resth = 58;
 
-	for (h1 = 48; h1 < 51; h1++)
+	while (h1 < 51)
 	{
-		for (h2 = 48; h2 < 52; h2++)
+		if (h1 == 50)
+		{
+			resth = 52;
+		}
+		for (h2 = 48; h2 < resth; h2++)
 		{
 			for (m1 = 48; m1 < 54; m1++)
 			{
@@ -27,5 +32,7 @@ void jack_bauer(void)
 				}
 			}
 		}
+		h1++;
 	}
 }
+
