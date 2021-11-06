@@ -3,7 +3,7 @@
  * print_all - unction that prints anything
  * @format: type of data
  */
-void print_all(const char * const format, ...);
+void print_all(const char * const format, ...)
 {
 	int i = 0;
 	char *s;
