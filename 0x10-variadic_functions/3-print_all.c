@@ -6,8 +6,7 @@
 void print_all(const char * const format, ...)
 {
 	int i = 0;
-	char *s;
-	char *separator = "";
+	char *s, *separator = "";
 
 	va_list ap;
 
@@ -17,32 +16,29 @@ void print_all(const char * const format, ...)
 	{
 		while (format[i])
 		{
-			swich(format[i])
+			switch (format[i])
 			{
 			case 'c':
 				printf("%s%c", separator, va_arg(ap, int));
 				break;
 			case 'i':
-				printf("%s%c", separator, va_arg(ap, int));
+				printf("%s%d", separator, va_arg(ap, int));
 				break;
 			case 'f':
-				printf("%s%c", separator, va_arg(ap, double));
+				printf("%s%f", separator, va_arg(ap, double));
 				break;
 			case 's':
 				s = va_arg(ap, char *);
 				if (!s)
-				{
 					s = "(nil)";
-				}
-				printf("%s%c", separator, s);
+				printf("%s%s", separator, s);
 				break;
 			default:
 				i++;
 				continue;
 			}
 			separator = ", ";
-			i++
-
+			i++;
 		}
 	}
 	putchar(10);
