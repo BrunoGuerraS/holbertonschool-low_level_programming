@@ -1,4 +1,4 @@
-#include "list.h"
+#include "lists.h"
 /**
  * print_list - prints all the elements
  * @h: variable type list_t
@@ -7,9 +7,9 @@
 size_t print_list(const list_t *h)
 {
 	size_t count = 0;
-	list_t whisky = 0;
+	const list_t *whisky = h;
 
-	while (whisky->next != NULL)
+	while (whisky)
 	{
 		printf("[%u] %s\n", whisky->len, whisky->str);
 		whisky = whisky->next;
