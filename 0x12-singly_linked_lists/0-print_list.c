@@ -12,10 +12,9 @@ size_t print_list(const list_t *h)
 	while (whisky)
 	{
 		if (whisky->str == NULL)
-		{
 			printf("[0] (nil)\n");
-		}
-		else{
+		else
+		{
 			printf("[%u] %s\n", whisky->len, whisky->str);
 		}
 		whisky = whisky->next;
