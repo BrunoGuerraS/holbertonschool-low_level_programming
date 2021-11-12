@@ -11,7 +11,13 @@ size_t print_list(const list_t *h)
 
 	while (whisky)
 	{
-		printf("[%u] %s\n", whisky->len, whisky->str);
+		if (whisky->str == NULL)
+		{
+			printf("[0] (nil)\n");
+		}
+		else{
+			printf("[%u] %s\n", whisky->len, whisky->str);
+		}
 		whisky = whisky->next;
 		count++;
 	}
