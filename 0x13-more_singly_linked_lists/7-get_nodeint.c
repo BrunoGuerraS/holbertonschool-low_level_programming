@@ -7,7 +7,7 @@
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	size_t count = 0;
+	unsigned int count = 0;
 	listint_t *tmp = head;
 
 	if (head == NULL || index < 0)
