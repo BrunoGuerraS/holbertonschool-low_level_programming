@@ -9,8 +9,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	ssize_t alert;
 	char *buffer;
-	char *ptr;
-	ssize_t count = 0;
+	ssize_t reading;
 
 	if (filename == NULL)
 		return (0);
@@ -19,23 +18,19 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (buffer == NULL)
 		return (0);
 
-	alert = open(filename, O_RDWR);
+	alert = open(filename, O_RDONLY);
 
 	if (alert == -1)
 		return (0);
 
-	read(alert, buffer, letters);
-	buffer[letters + 1] = '\0';
+	reading = read(alert, buffer, letters);
+	if (reading == -1)
+		return(0);
 	close(alert);
 
-	ptr = buffer;
-	while (*ptr != '\0')
-	{
-		count++;
-		ptr++;
-	}
+	write(1, buffer, reading);
 
-	write(1, buffer, letters);
+	free(buffer);
 
-	return (count);
+	return (reading);
 }
