@@ -20,14 +20,16 @@ int create_file(const char *filename, char *text_content)
 		s++;
 	}
 
-	whisky = open(filename, O_CREAT | O_RDWR, 0600);
+	whisky = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0600);
 	if (whisky == -1)
 		return (-1);
-
-	vodka = write(whisky, text_content, i);
-	if (vodka == -1)
-		return (-1);
+	if (text_content != NULL)
+	{
+		vodka = write(whisky, text_content, i);
+		if (vodka == -1)
+			return (-1);
+	}
 
 	close(whisky);
-	return (0);
+	return (1);
 }
