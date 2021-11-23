@@ -14,17 +14,17 @@ int create_file(const char *filename, char *text_content)
 
 	if (filename == NULL)
 		return (-1);
-	while (*s != '\0')
-	{
-		i++;
-		s++;
-	}
 
-	whisky = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0600);
+	whisky = open(filename, O_CREAT | O_WRONLY | O_TRUNC , 0600);
 	if (whisky == -1)
 		return (-1);
 	if (text_content != NULL)
 	{
+		while (*s != '\0')
+		{
+			i++;
+			s++;
+		}
 		vodka = write(whisky, text_content, i);
 		if (vodka == -1)
 			return (-1);
