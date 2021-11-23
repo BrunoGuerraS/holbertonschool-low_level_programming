@@ -8,6 +8,7 @@
 int create_file(const char *filename, char *text_content)
 {
 	int whisky;
+	int vodka;
 	char *s = text_content;
 	int i = 0;
 
@@ -23,7 +24,10 @@ int create_file(const char *filename, char *text_content)
 	if (whisky == -1)
 		return (-1);
 
-	write(whisky, text_content, i);
+	vodka = write(whisky, text_content, i);
+	if (vodka == -1)
+		return (-1);
 
+	close(whisky);
 	return (0);
 }
