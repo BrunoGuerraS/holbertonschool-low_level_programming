@@ -5,24 +5,24 @@
  */
 void print_square(int size)
 {
-        int i, o;
-        i = size;
-        o = size;
+	int i, o;
+	i = size;
+	o = size;
 
-        if (size > 0)
-        {
-                while (i > 0)
-                {
-                        o = size;
-                        while (o > 0)
-                        {
-                                putchar(35);
-                                o--;
-                        }
-                        putchar(10);
-                        i--;
-                }
-        }
-        else
-                putchar(10);
+	if (size > 0)
+	{
+		while (i > 0)
+		{
+			o = size;
+			while (o > 0)
+			{
+				putchar(35);
+				o--;
+			}
+			putchar(10);
+			i--;
+		}
+	}		
+	else
+	putchar(10);
 }
