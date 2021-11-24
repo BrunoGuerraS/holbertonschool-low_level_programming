@@ -51,7 +51,7 @@ int main(int argc, char **argv)
 	if (fd_from == -1)
 		exit(97);
 
-	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC,  0664);
+	fd_to = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY,  0666);
 	if (fd_to == -1)
 		exit(97);
 	_fill(argv, fd_from, fd_to);
