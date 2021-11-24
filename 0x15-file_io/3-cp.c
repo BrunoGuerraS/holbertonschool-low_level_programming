@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- * _fill - handle arguments to copy text
+ * main - handle arguments to copy text
  * @argv: arguments
- * @fd_from: file from
- * @fd_to: file to
+ * @argc: number of arguments
+ * Return: o
  */
 int main(int argc, char *argv[])
 {
