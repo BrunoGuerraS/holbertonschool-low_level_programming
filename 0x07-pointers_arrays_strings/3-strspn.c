@@ -12,21 +12,19 @@ unsigned int _strspn(char *s, char *accept)
 	int k = 0;
 	int z = 0;
 
-	while (*(s + x) != 0)
+	for (x = 0; *(s + x) != 0; x++)
 	{
 		k = 0;
-		while (*(accept + y) != 0)
+		for (y = 0;  *(accept + y) != 0; y++)
 		{
 			if (*(s + x) == *(accept + y))
 			{
 				z++;
 				k = 1;
 			}
-			y++;
 		}
 		if (k == 0)
 			return (z);
-		x++;
 	}
 	return (0);
 }
