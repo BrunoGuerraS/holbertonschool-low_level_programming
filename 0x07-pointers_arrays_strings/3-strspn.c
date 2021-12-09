@@ -7,24 +7,22 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	int x = 0;
-	int y = 0;
-	int k = 0;
-	int z = 0;
+	unsigned int p, n_Bts = 0, band = 0;
 
-	for (x = 0; *(s + x) != 0; x++)
-	{
-		k = 0;
-		for (y = 0;  *(accept + y) != 0; y++)
+	do {
+		for (pos = 0; accept[p]; p++)
 		{
-			if (*(s + x) == *(accept + y))
+			if (*s == accept[p])
 			{
-				z++;
-				k = 1;
+				n_Bts++;
+				band = 1;
+				break;
 			}
+			else
+				band = 0;
+
 		}
-		if (k == 0)
-			return (z);
-	}
-	return (0);
-}
+		if (band == 0)
+			break;
+	} while (*s++);
+
