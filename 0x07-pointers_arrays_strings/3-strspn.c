@@ -10,7 +10,7 @@ unsigned int _strspn(char *s, char *accept)
 	unsigned int p, n_Bts = 0, band = 0;
 
 	do {
-		for (pos = 0; accept[p]; p++)
+		for (p = 0; accept[p]; p++)
 		{
 			if (*s == accept[p])
 			{
