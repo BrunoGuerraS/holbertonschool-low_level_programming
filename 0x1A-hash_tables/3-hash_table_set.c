@@ -1,35 +1,31 @@
 #include "hash_tables.h"
 /**
- * hash_table_set - Adds an element to the hash table
- * @ht: Is the hash table you want to add or update the key/value to
- * @key: is the key
- * @value: Is the value associated with the key
- *
- * Return: 1 if it succeeded, 0 otherwise
+ * hash_table_set - adds an element to the hash table
+ * @ht: hash table
+ * @key: key
+ * @value: value of struct
+ * Return: 1 or 0
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *node = NULL, **ptr = NULL;
+	hash_node_t *n = NULL;
+	hash_node_t **ptr = NULL;
 	unsigned long int index = 0;
 
 	if (!ht || !key || !strcmp(key, "") || !value)
 		return (0);
-	node = malloc(sizeof(hash_node_t));
-	if (node == NULL)
-	{
+	n = malloc(sizeof(hash_node_t));
+	if (n == NULL)
 		return (0);
-	}
 	index = key_index((unsigned char *)key, ht->size);
 	ptr = &(ht->array[index]);
-	node->key = strdup(key);
-	node->value = strdup(value);
-	node->next = NULL;
-	set_check(ptr, &node);
+	n->key = strdup(key);
+	n->value = strdup(value);
+	n->next = NULL;
+	set_check(ptr, &n);
 
 	return (1);
 }
-
-
 /**
  * set_check - set and check nodes
  * @head: pointing to hash_node in the hash table
@@ -39,7 +35,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  */
 void set_check(hash_node_t **head, hash_node_t **node)
 {
-	hash_node_t *tail = *head;
+	hash_node_t *tl = *head;
 
 	if (!head)
 	{
@@ -50,18 +46,18 @@ void set_check(hash_node_t **head, hash_node_t **node)
 	}
 	if (*head)
 	{
-		while (tail)
+		while (tl)
 		{
-			if (strcmp(tail->key, (*node)->key) == 0)
+			if (strcmp(tl->key, (*node)->key) == 0)
 			{
-				free(tail->value);
-				tail->value = strdup((*node)->value);
+				free(tl->value);
+				tl->value = strdup((*node)->value);
 				free((*node)->value);
 				free((*node)->key);
 				free(*node);
 				return;
 			}
-			tail = tail->next;
+			tl = tl->next;
 		}
 	}
 
