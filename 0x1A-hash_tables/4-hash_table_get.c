@@ -16,7 +16,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	bringh = ht->array[index];
 	while (bringh)
 	{
-		if (strcmp(bringh->key, (char *)key) == 0 )
+		if (strcmp(bringh->key, (char *)key) == 0)
 			return (bringh->value);
 		bringh = bringh->next;
 	}
